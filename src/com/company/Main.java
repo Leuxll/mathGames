@@ -1,10 +1,13 @@
 package com.company;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static User [] userDatabase = new User[10];
+
+    public static void main(String[] args) throws IOException {
 
         Scanner options = new Scanner(System.in);
         char userInput = ' ';
@@ -17,17 +20,14 @@ public class Main {
 
             userInput = options.next().charAt(0);
 
-            if (userInput == '1'){
+            if (userInput == '1') {
                 output = Game.Game(userInput);
-            }
-            else if (userInput == '2'){
+            } else if (userInput == '2') {
                 System.out.println("Display single highest and lowest scores");
-                output = Scores.Scores(userInput, 10);
-            }
-            else if (userInput == '3'){
+                //output = Scores.Scores(userInput, 10);
+            } else if (userInput == '3') {
                 System.out.println("Display scores sorted from highest to lowest");
-            }
-            else if (userInput == '4'){
+            } else if (userInput == '4') {
                 System.out.println("Display scores sorted from lowest to highest");
             }
 
