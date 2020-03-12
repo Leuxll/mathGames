@@ -49,10 +49,10 @@ public class Main {
             choice = scanner.nextLine().charAt(0);
 
             if (choice == '1') {
-                System.out.println(UserMethods.AddUser());
+                UserMethods.DisplayUser();
             }
             else if (choice == '2') {
-
+                System.out.println(UserMethods.AddUser());
             }
         }
 

@@ -50,14 +50,16 @@ public class UserMethods {
         }
         if (added = true) {
 
-            return("City was added");
+            return("User was added");
 
         }
         else {
 
-            return("City not added, database full");
+            return("User not added, database full");
 
         }
+
+
 
     }
 
