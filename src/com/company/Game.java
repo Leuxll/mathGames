@@ -9,7 +9,7 @@ public class Game {
         int points = 0;
         Random rand = new Random();
 
-        for(int i = 0; i <= 6; i++){
+        for(int i = 0; i <= 5; i++){
 
             int randPlusOrMinus = rand.nextInt(2);
             int randNumber = -50 + rand.nextInt(100);
@@ -50,19 +50,20 @@ public class Game {
 
                 else {
                     System.out.println("You got it wrong, the correct answer is " + sum);
-                    points = points - 2;
+                    points = points - 1;
                     System.out.println("Your score is: " + points);
                 }
             }
         }
 
-        for(int i = 0; i <= 6; i++){
+        for(int i = 0; i <= 5; i++){
 
             int randMultipleOrDivide = rand.nextInt(2);
-            int randNumber = -50 + rand.nextInt(100);
-            int randNumber2 = -50 + rand.nextInt(100);
 
             if (randMultipleOrDivide == 0) {
+
+                int randNumber = -50 + rand.nextInt(100);
+                int randNumber2 = -50 + rand.nextInt(100);
 
                 int product = randNumber * randNumber2;
 
@@ -79,12 +80,15 @@ public class Game {
 
                 else {
                     System.out.println("You got it wrong, the correct answer is " + product);
-                    points = points - 3;
+                    points = points - 1;
                     System.out.println("Your score is: " + points);
                 }
 
             }
             else {
+                int randNumber = -50 + rand.nextInt(100);
+                int randNumber2 = -50 + rand.nextInt(100);
+
                 while (randNumber % randNumber2 == 0) {
                     int product = randNumber / randNumber2;
 
@@ -97,10 +101,9 @@ public class Game {
                         System.out.println("Your score is: " + points);
                     } else {
                         System.out.println("You got it wrong, the correct answer is " + product);
-                        points = points - 4;
+                        points = points - 1;
                         System.out.println("Your score is: " + points);
                     }
-                    break;
                 }
             }
         }
