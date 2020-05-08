@@ -4,12 +4,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
-    public static String Game(char Input){
+    public static String Game(char Input) {
 
         int points = 0;
         Random rand = new Random();
 
-        for(int i = 0; i <= 5; i++){
+        for (int i = 0; i <= 5; i++) {
 
             int randPlusOrMinus = rand.nextInt(2);
             int randNumber = -50 + rand.nextInt(100);
@@ -27,16 +27,13 @@ public class Game {
                     points = points + 1;
                     System.out.println("Your score is: " + points);
 
-                }
-
-                else {
+                } else {
                     System.out.println("You got it wrong, the correct answer is " + sum);
                     points = points - 1;
                     System.out.println("Your score is: " + points);
                 }
 
-            }
-            else {
+            } else {
                 int sum = randNumber - randNumber2;
 
                 System.out.println("What is " + randNumber + " - " + randNumber2 + " ?");
@@ -46,9 +43,7 @@ public class Game {
                     System.out.println("You got it correct");
                     points = points + 2;
                     System.out.println("Your score is: " + points);
-                }
-
-                else {
+                } else {
                     System.out.println("You got it wrong, the correct answer is " + sum);
                     points = points - 1;
                     System.out.println("Your score is: " + points);
@@ -56,40 +51,16 @@ public class Game {
             }
         }
 
-        for(int i = 0; i <= 5; i++){
+        int setsOfNumbers = 0;
 
-            int randMultipleOrDivide = rand.nextInt(2);
+        while (setsOfNumbers < 6) {
+            int randNumber = -50 + rand.nextInt(100);
+            int randNumber2 = -50 + rand.nextInt(100);
 
-            if (randMultipleOrDivide == 0) {
+            if (randNumber % randNumber2 == 0) {
+                int randMultiplyOrDivide = rand.nextInt(2);
+                if (randMultiplyOrDivide == 1) {
 
-                int randNumber = -50 + rand.nextInt(100);
-                int randNumber2 = -50 + rand.nextInt(100);
-
-                int product = randNumber * randNumber2;
-
-                System.out.println("What is " + randNumber + " * " + randNumber2 + " ?");
-                Scanner scanner = new Scanner(System.in);
-                int answer = scanner.nextInt();
-                if (answer == product) {
-                    System.out.println("You got it correct");
-                    points = points + 3;
-                    System.out.println("Your score is: " + points);
-
-
-                }
-
-                else {
-                    System.out.println("You got it wrong, the correct answer is " + product);
-                    points = points - 1;
-                    System.out.println("Your score is: " + points);
-                }
-
-            }
-            else {
-                int randNumber = -50 + rand.nextInt(100);
-                int randNumber2 = -50 + rand.nextInt(100);
-
-                while (randNumber % randNumber2 == 0) {
                     int product = randNumber / randNumber2;
 
                     System.out.println("What is " + randNumber + " / " + randNumber2 + " ?");
@@ -104,11 +75,30 @@ public class Game {
                         points = points - 1;
                         System.out.println("Your score is: " + points);
                     }
+                } else {
+
+                    int product = randNumber * randNumber2;
+
+                    System.out.println("What is " + randNumber + " * " + randNumber2 + " ?");
+                    Scanner scanner = new Scanner(System.in);
+                    int answer = scanner.nextInt();
+                    if (answer == product) {
+                        System.out.println("You got it correct");
+                        points = points + 3;
+                        System.out.println("Your score is: " + points);
+
+                    } else {
+                        System.out.println("You got it wrong, the correct answer is " + product);
+                        points = points - 1;
+                        System.out.println("Your score is: " + points);
+                    }
+
                 }
+
             }
+            setsOfNumbers++;
         }
-
-        return("Your score is: " + points);
-
+        return ("Your score is: " + points);
     }
 }
+
